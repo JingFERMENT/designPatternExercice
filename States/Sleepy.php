@@ -13,8 +13,10 @@ final class Sleepy implements MonsterState
     {
         echo $this->monster->name() . ' est endormi ...' . PHP_EOL;
 
-        // @TODO : le monstre finit par se réveiller !
+        // Le monstre finit par se réveiller !
+        $this->monster->changeState(new Healthy());
 
+        echo $this->monster->name() . ' se réveille et maintenant en pleine forme !' . PHP_EOL;
     }
 
     public function setMonster(Monster $monster) : MonsterState

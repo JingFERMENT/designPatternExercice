@@ -10,8 +10,8 @@ final class Healthy implements MonsterState
     
     public function attack(Monster $monster) : void
     {
-        // @TODO : le monstre attaque à l'aide de sa force.
-
+        // Le monstre attaque à l'aide de sa force.
+        $monster->healthPoints -= $this->monster->strength();
 
         echo $this->monster->name() . ' attaque !' . PHP_EOL;
     }

@@ -13,7 +13,8 @@ final class Crazy implements MonsterState
         // un pourcentage de chance de se blesser
         if ($this->isTooMuchCrazy())
         {
-            // @TODO : le monstre se blesse tout seule, du fait de sa propre force...
+            // le monstre se blesse tout seul, du fait de sa propre force...
+            $monster->healthPoints -= $this->monster->strength();
 
             
             echo $this->monster->name() . ' est fou et s\'inflige des dégats' . PHP_EOL;
@@ -34,7 +35,7 @@ final class Crazy implements MonsterState
 
     private function isTooMuchCrazy() : bool
     {
-        // @TODO : retourner une condition aléatoire (cf fonction rand() de PHP)
-        return true;
+        // retourner une condition aléatoire (cf fonction rand() de PHP)
+        return (bool) rand(0,1);
     }
 }
